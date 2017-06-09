@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+import Counter from './counter.js';
 
-import App from './components/App.js';
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('content')
-);
+window.App = {
+    render:  () => {
+        ReactDom.render(
+            <Counter />,
+            document.getElementById('root')
+        );
+    }
+};
