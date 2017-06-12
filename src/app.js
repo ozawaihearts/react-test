@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Counter from './counter.js';
+import App from './components/HelloWorld';
+import Counter from './components/counter';
 
 window.App = {
     render:  () => {
         ReactDom.render(
-            <Counter />,
+            <App />,
             document.getElementById('root')
         );
     }
