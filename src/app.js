@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import App from './components/HelloWorld';
+import ReactDOM from 'react-dom';
+
+import HelloWorld from './components/helloWorld';
 import Counter from './components/counter';
 
-window.App = {
-    render:  () => {
-        ReactDom.render(
-            <App />,
-            document.getElementById('root')
-        );
-    }
-};
+ReactDOM.render(
+  <div>
+    <HelloWorld/>
+  </div>,
+  document.getElementById('root')
+);
