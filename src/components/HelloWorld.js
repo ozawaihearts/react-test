@@ -3,7 +3,7 @@ import React from 'react';
 export default class helloWorld extends React.Component {
   render() {
     return (
-      <h1>omg, wtf</h1>
+      <h1>omg, holy shit, wtf</h1>
     );
   }
 }
