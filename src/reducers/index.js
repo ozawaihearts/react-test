@@ -1,5 +1,5 @@
 import {combineReducers} from "redux"
-import text from "./text"
+import text from "./Text"
 
 const reducer = combineReducers({
     text
