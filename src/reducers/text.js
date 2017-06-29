@@ -1,4 +1,4 @@
-// 初期値の設定をしてあげる
+// 初期値の設定
 const initialState = {
     flag: true,
     text: "入力してください",

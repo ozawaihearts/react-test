@@ -4,10 +4,8 @@ import { submitText, showText, hideText } from "../actions/Text"
 
 class testRedux extends Component {
     render() {
-        // mapStateToProps で紐付けしていることに注意
         const { flag, text, number } = this.props;
-        console.log(this);
-        // ココらへんは Redux じゃなくて React (JSX) の書き方
+        console.log(this.props.text);
         return (
             <div>
                 <div className={(flag ? "" : "hide")}>
@@ -25,18 +23,19 @@ class testRedux extends Component {
     }
 
     submitButtonClicked(e) {
-        // input の値を取得
-        // action 内ではできない事をここで処理する
         const inputText = this.refs.inputText.value;
-        dispatch(submitText(inputText));
+        // this.setState({submitText: inputText});
+        this.props.submitText(inputText);
     }
 
     showButtonClicked(e) {
-        dispatch(showText());
+        // dispatch(showText());
+        this.props.showText();
     }
 
     hideButtonClicked(e) {
-        dispatch(hideText());
+        // dispatch(hideText());
+        this.props.hideText();
     }
 }
 
@@ -49,6 +48,5 @@ function mapStateToProps(state) {
     }
 }
 
-// react-redux にある connect 関数を使うと state と Text の this.props をひも付けできる
-// 前述したとおり、 store.subscribe() を呼ばなくても良くなる
-export default connect(mapStateToProps)(testRedux)
+
+export default connect(mapStateToProps, {submitText, showText, hideText})(testRedux)
